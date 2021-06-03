@@ -1,38 +1,21 @@
 package com.addressBook;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Create Class for Defining the AddressBook
  */
 public class AddressBook {
-    //variables
-    String firstName, lastName, address, city, state, eMail, phoneNumber;
-    int zipCode;
+    private List<ContactPerson> contactPersonList = new ArrayList<>();
 
     /**
-     * Create Constructor for Initializing the objects
+     * Create Method for adding Contacts in the Address Book
+     * @return
      */
-    public AddressBook(String firstName, String lastName, String address, String city, String state,
-                       int zipCode, String eMail, String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zipCode = zipCode;
-        this.eMail = eMail;
-        this.phoneNumber = phoneNumber;
-    }
+    public boolean add(ContactPerson contactPerson) {
+        return this.contactPersonList.add(contactPerson);
 
-    //Printing the AddressBook
-    public void addressBook() {
-        System.out.println("First Name: " + firstName);
-        System.out.println("Last Name: " + lastName);
-        System.out.println("Address: " + address);
-        System.out.println("City: " + city);
-        System.out.println("State: " + state);
-        System.out.println("ZipCode: " + zipCode);
-        System.out.println("Email Address: " + eMail);
-        System.out.println("Phone Number: " + phoneNumber);
     }
 
     /**
@@ -40,7 +23,5 @@ public class AddressBook {
      */
     public static void main(String[] args) {
         System.out.println("Welcome To AddressBook Program in AddressBook Main Class on Master Program");
-        AddressBook book = new AddressBook(null,null,null,null,null,0,null,null);
-        book.addressBook();
     }
 }
